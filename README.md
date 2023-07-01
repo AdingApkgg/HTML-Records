@@ -1,2 +1,2 @@
-# YuanShenSFqun
-原神私服群推荐
+# HTML记录
+这里记录了一些我的HTML练习与收集的项目..
