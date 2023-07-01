@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS测试-01</title>
+</head>
+<style>
+    body {
+        background-color: #f4f4f4;
+        color: #555555;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5em;
+
+        font: bold, 20px, Arial, Helvetica, sans-serif;
+    }
+
+    button {
+        background-color: #444444;
+        color: #fff;
+        padding: 10px 15px;
+    }
+
+    button:hover {
+        background-color: aqua;
+    }
+
+    button:active {
+        background-color: red;
+    }
+
+    a {
+        text-decoration: none;
+        color: #555555;
+    }
+
+    a:hover {
+        color: crimson;
+    }
+
+    a:visited {
+        color: #f4f4f4;
+    }
+
+    .container {
+        clear: both;
+    }
+
+    .box1 {
+        border: 10px blue solid;
+        border-right: 8px brown solid;
+        border-top: 5px rebeccapurple dotted;
+        border-left: 6px skyblue solid;
+        border-bottom: 1px firebrick double;
+
+        border-bottom-width: 8px;
+        border-bottom-style: dashed;
+
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+
+        margin-top: 100px;
+
+        background-color: seagreen;
+        color: rgb(114, 97, 84);
+    }
+
+    .box1 h1 {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 800;
+        font-style: italic;
+        text-decoration: underline;
+        text-transform: uppercase;
+        letter-spacing: 1em;
+        word-spacing: 2em;
+    }
+
+    .box2 {
+        border: 5px dotted #cccccc;
+        border-radius: 35px;
+        padding: 20px;
+        margin: 20px 0px;
+        position: relative;
+        top: 30px;
+        left: 30px;
+    }
+
+    .box2 h1 {
+        text-align: center;
+    }
+
+    .container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .list li {
+        list-style: square;
+        list-style-image: url('../../img/13.webp');
+    }
+
+    .block {
+        float: left;
+        width: 33.3%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    #mian-block {
+        float: left;
+        width: 70%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    #sideber {
+        float: right;
+        width: 30%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .list2 li:nth-child(even) {
+        background-color: grey;
+    }
+
+    .list2 li:first-child {
+        background-color: red;
+    }
+
+    .list2 li:nth-child(3) {
+        color: aqua;
+    }
+
+    .position-box {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    .position-box h1 {
+        position: absolute;
+        top: 50px;
+    }
+
+    .position-box h2 {
+        position: absolute;
+        right: 30px;
+    }
+
+    #fixed {
+        position: fixed;
+        right: 0;
+        bottom: 200px;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="box1">
+            <h1>Hello World</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia similique praesentium quos quibusdam
+                perspiciatis tempora harum illum cupiditate culpa dolor odit laudantium fuga molestiae reprehenderit ea
+                suscipit iure expedita, distinctio, omnis dolores delectus autem cum esse. Quas, mollitia nemo
+                recusandae exercitationem quis vel officiis consequatur ab nostrum quia, distinctio repudiandae suscipit
+                quasi ipsa sit facere temporibus quam veritatis. Sint, tenetur. Ratione alias laborum quod beatae, quis
+                neque cum dolorem dolore. Nostrum molestiae nemo incidunt dolore, rerum vitae quas possimus adipisci
+                similique amet, voluptatem optio necessitatibus! Tenetur corrupti sit quos eius quidem? Architecto esse
+                fugiat molestias adipisci perferendis unde ad vitae.</p>
+        </div>
+
+        <div class="box2">
+            <h1>Hello World</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia similique praesentium quos quibusdam
+                perspiciatis tempora harum illum cupiditate culpa dolor odit laudantium fuga molestiae reprehenderit ea
+                suscipit iure expedita, distinctio, omnis dolores delectus autem cum esse. Quas, mollitia nemo
+                recusandae exercitationem quis vel officiis consequatur ab nostrum quia, distinctio repudiandae suscipit
+                quasi ipsa sit facere temporibus quam veritatis. Sint, tenetur. Ratione alias laborum quod beatae, quis
+                neque cum dolorem dolore. Nostrum molestiae nemo incidunt dolore, rerum vitae quas possimus adipisci
+                similique amet, voluptatem optio necessitatibus! Tenetur corrupti sit quos eius quidem? Architecto esse
+                fugiat molestias adipisci perferendis unde ad vitae.</p>
+            <button>Button</button>
+        </div>
+
+        <div class="list">
+            <ul>
+                <li><a href="#">List 1</a></li>
+                <li><a href="#">List 2</a></li>
+                <li><a href="#">List 3</a></li>
+                <li><a href="#">List 4</a></li>
+                <li><a href="#">List 5</a></li>
+            </ul>
+        </div>
+        <div class="block">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates dignissimos! Eligendi
+                distinctio, voluptatum excepturi alias eius maiores molestiae labore sapiente laboriosam laudantium, hic
+                esse accusantium sint libero optio possimus beatae? Asperiores, itaque! Praesentium recusandae fugit
+                nisi. Molestias quae ad alias dolorum quam unde quaerat natus! Aperiam, ab! Nostrum minus, perspiciatis
+                ipsum quisquam esse ea dolorem voluptates eaque praesentium magnam velit error recusandae facilis
+                repellendus nesciunt ex molestiae adipisci totam hic assumenda provident? Expedita nam autem id officia
+                reiciendis ducimus neque minima, labore quisquam explicabo consequuntur soluta molestiae culpa, nostrum
+                accusamus facilis maxime sint. Beatae et sequi animi laboriosam voluptatem.</p>
+        </div>
+        <div class="block">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates dignissimos! Eligendi
+                distinctio, voluptatum excepturi alias eius maiores molestiae labore sapiente laboriosam laudantium, hic
+                esse accusantium sint libero optio possimus beatae? Asperiores, itaque! Praesentium recusandae fugit
+                nisi. Molestias quae ad alias dolorum quam unde quaerat natus! Aperiam, ab! Nostrum minus, perspiciatis
+                ipsum quisquam esse ea dolorem voluptates eaque praesentium magnam velit error recusandae facilis
+                repellendus nesciunt ex molestiae adipisci totam hic assumenda provident? Expedita nam autem id officia
+                reiciendis ducimus neque minima, labore quisquam explicabo consequuntur soluta molestiae culpa, nostrum
+                accusamus facilis maxime sint. Beatae et sequi animi laboriosam voluptatem.</p>
+        </div>
+        <div class="block">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, voluptates dignissimos! Eligendi
+                distinctio, voluptatum excepturi alias eius maiores molestiae labore sapiente laboriosam laudantium, hic
+                esse accusantium sint libero optio possimus beatae? Asperiores, itaque! Praesentium recusandae fugit
+                nisi. Molestias quae ad alias dolorum quam unde quaerat natus! Aperiam, ab! Nostrum minus, perspiciatis
+                ipsum quisquam esse ea dolorem voluptates eaque praesentium magnam velit error recusandae facilis
+                repellendus nesciunt ex molestiae adipisci totam hic assumenda provident? Expedita nam autem id officia
+                reiciendis ducimus neque minima, labore quisquam explicabo consequuntur soluta molestiae culpa, nostrum
+                accusamus facilis maxime sint. Beatae et sequi animi laboriosam voluptatem.</p>
+        </div>
+        <div class="clearfix"></div>
+        <div id="main-block">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet harum beatae voluptate est
+                aliquam ipsa eum quia inventore amet totam laudantium, veritatis sequi nesciunt neque! Omnis magnam ut
+                vel pariatur impedit! Voluptatum aperiam, provident ratione rerum, aspernatur facilis, et praesentium
+                sed magni nam laudantium excepturi amet voluptas mollitia. Consequatur, exercitationem perferendis! Quo
+                rem iste reiciendis incidunt. A mollitia tenetur praesentium quo, reiciendis, sunt cumque voluptas
+                magnam culpa dolorum quidem omnis nihil corporis eum aut sint, consequatur minus aspernatur vel
+                exercitationem adipisci. Eaque, odit similique? Libero voluptas perspiciatis molestias deleniti? Dolore,
+                et similique voluptates recusandae atque ducimus unde animi eum!</p>
+        </div>
+        <div id="sideber">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eveniet harum beatae voluptate est
+                aliquam ipsa eum quia inventore amet totam laudantium, veritatis sequi nesciunt neque! Omnis magnam ut
+                vel pariatur impedit! Voluptatum aperiam, provident ratione rerum, aspernatur facilis, et praesentium
+                sed magni nam laudantium excepturi amet voluptas mollitia. Consequatur, exercitationem perferendis! Quo
+                rem iste reiciendis incidunt. A mollitia tenetur praesentium quo, reiciendis, sunt cumque voluptas
+                magnam culpa dolorum quidem omnis nihil corporis eum aut sint, consequatur minus aspernatur vel
+                exercitationem adipisci. Eaque, odit similique? Libero voluptas perspiciatis molestias deleniti? Dolore,
+                et similique voluptates recusandae atque ducimus unde animi eum!</p>
+        </div>
+        <div class="clearfix"></div>
+
+        <ul class="list2">
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+
+        <div class="position-box">
+            <h1>Heading1</h1>
+            <h2>Heading2</h2>
+        </div>
+
+        <button onclick="window.open('https://www.baidu.com/','self')" id="fixed">Button</button>
+    </div>
+
+    <div style="margin-top: 1000px"></div>
+</body>
+
+</html>

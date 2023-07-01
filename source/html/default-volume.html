@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认音量</title>
+</head>
+
+<body>
+
+    <audio id="audio" v-if="image.play == true" autoplay loop controls>
+        <source src="../../audio/fbi.mp3" v-bind:src="image.audio" type="audio/mp3">
+    </audio>
+
+    <script>
+        var audio = document.getElementById("audio");
+        audio.volume = 0.3;
+    </script>
+
+</body>
+
+</html>

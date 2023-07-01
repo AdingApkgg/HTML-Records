@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: rgba(51, 51, 51, 0.7);
+        overflow: hidden;
+    }
+
+    .boxa {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        border-radius: 20px;
+        box-shadow: rgba(51, 51, 51, 0.5) 0 0 10px 0;
+    }
+
+    .box01 {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background: rgb(45, 205, 211);
+        width: 260px;
+        height: 100px;
+        border-radius: 30px;
+        box-shadow: rgba(51, 51, 51, 0.5) 0 0 10px 0;
+    }
+
+    .box02 {
+        transform: translate(-120%, -50%);
+        position: absolute;
+        border-radius: 300px;
+        width: 90px;
+        height: 90px;
+        background: rgb(120, 211, 45);
+        box-shadow: rgba(51, 51, 51, 0.5) 0 0 10px 0;
+    }
+
+    .box02:active {
+        transform: translate(20%, -50%);
+        transition: 0.3s;
+        border-radius: 20px;
+        background: rgb(204, 207, 255);
+        cursor: wait;
+    }
+
+    .box03 {
+        margin: -100px 0 0 -100px;
+        width: 200px;
+        height: 200px;
+        border-radius: 300px;
+        background: rgb(51, 216, 36);
+    }
+
+    .box03:hover {
+        margin: -100px 0 0 -100px;
+        border: 2000px solid rgb(148, 255, 60);
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(125deg, #12c2e9, #c471ed, #f64f59);
+        transition: 3s;
+    }
+</style>
+
+<body>
+    <div class="boxa">
+        <div class="box01"></div>
+        <div class="box02"></div>
+    </div>
+
+    <div class="box03"></div>
+</body>
+
+</html>

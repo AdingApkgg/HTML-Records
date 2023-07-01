@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>渐变与阴影</title>
+</head>
+<style>
+	body {
+		margin: 0;
+		background: linear-gradient(125deg, #b92b27, #1565c0);
+		background-size: 200%;
+		animation: bganimation 5s infinite;
+		background-attachment: fixed;
+	}
+
+	@keyframes bganimation {
+		0% {
+			background-position: 0% 50%;
+		}
+
+		50% {
+			background-position: 100% 50%;
+		}
+
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	#box1 {
+		margin: 20px;
+		background-image: linear-gradient(125deg, #12c2e9, #c471ed, #f64f59);
+		width: 400px;
+		height: 200px;
+		box-shadow: rgba(51, 51, 51, 0.6) 5px 5px 5px 0px;
+		animation: bganimation 5s infinite;
+		background-attachment: fixed;
+		background-size: 150%;
+	}
+
+	#box2 {
+		margin: 20px;
+		background-image: radial-gradient(#12c2e9, #c471ed, #f64f59);
+		width: 400px;
+		height: 200px;
+		box-shadow: rgba(51, 51, 51, 0.6) 0px 0px 50px 0px;
+		animation: bganimation 5s infinite;
+		background-attachment: fixed;
+		background-size: 150%;
+	}
+</style>
+
+<body>
+	<div id="box1">
+		box1
+	</div>
+	<div id="box2">
+		box2
+	</div>
+</body>
+
+</html>

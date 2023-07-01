@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>昼夜切换</title>
+</head>
+<style>
+    @charset "utf-8";
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 200ms ease;
+    }
+
+    .box>div {
+        transition: all 200ms ease;
+    }
+
+    .light {
+        background: pink;
+    }
+
+    .light .box {
+        width: 120px;
+        height: 60px;
+        background: #fdd6df;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+    }
+
+    .light .box>div {
+        position: absolute;
+        left: 5px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background: pink url(../../img/8.webp) 6px 7px no-repeat;
+        background-size: 35px 35px;
+    }
+
+    .dark {
+        background: rgba(50, 50, 50, 1);
+    }
+
+    .dark .box {
+        width: 120px;
+        height: 60px;
+        background: rgba(70, 70, 70, 1);
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+    }
+
+    .dark .box>div {
+        position: absolute;
+        left: 65px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background: rgba(50, 50, 50, 1) url(../../img/9.webp) 6px 7px no-repeat;
+        background-size: 35px 35px;
+    }
+</style>
+
+<body class="light">
+    <div onclick="openDark(this)" class="box">
+        <div></div>
+    </div>
+
+    <script type="text/javascript">
+        function openDark(box) {
+            let body = document.body;
+            if (box.state == null) {
+                box.state = false;
+            }
+            if (box.state) {
+                body.className = "light";
+            } else {
+                body.className = "dark";
+            }
+            box.state = !box.state;
+        }
+    </script>
+</body>
+
+</html>

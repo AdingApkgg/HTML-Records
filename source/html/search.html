@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索</title>
+</head>
+
+<body>
+    <div class="item">
+        <form role="search" method="get" id="searchform" class="searchform" action="">
+            <div class="input-group mt-2 mb-2">
+                <input type="text" name="s" id="search-widgets" class="form-control" placeholder="搜点什么呢?">
+                <div class="input-group-append">
+                    <button class="btn btn-primary btn-search" type="submit" id="searchsubmit">搜索</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        //搜索功能
+
+        var oldKey0 = "";
+
+        var index0 = -1; var oldCount0 = 0;
+
+        var newflag = 0;
+
+        var currentLength = 0;
+
+
+
+        function wordSearch(flg) {
+
+            var key = $("#key").val(); //取key值
+
+            if (!key) {
+
+                return; //key为空则退出
+
+            }
+
+            getArray();
+
+            focusNext(flg);
+
+
+
+        }
+
+
+
+        function focusNext(flg) {
+
+            if (newflag == 0) {//如果新搜索,index清零
+
+                index0 = 0;
+
+            }
+
+            if (!flg) {
+
+                if (oldCount0 != 0) {//如果还有搜索
+
+                    if (index0 < oldCount0) {//左边如果没走完，走左边
+
+                        focusMove(index0);
+
+                        index0++;
+
+                    } else if (index0 == oldCount0) {//都走完了
+
+                        index0 = 0;
+
+                        focusMove(index0);
+
+                        index0++;
+
+                    }
+
+                    else {
+
+                        index0 = 0;//没确定
+
+                        focusMove(index0);
+
+                        index0++;
+
+                    }
+
+                }
+
+
+
+            } else {
+
+                if (oldCount0 != 0) {//如果还有搜索
+
+                    if (index0 <= oldCount0 && index0 > 0) {//左边如果没走完，走左边
+
+                        index0--;
+
+                        focusMove(index0);
+
+                    } else if (index0 == 0) {//都走完了
+
+                        index0 = oldCount0;
+
+                        index0--
+
+                        focusMove(index0);
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        function getArray() {
+
+            newflag = 1;
+
+            $(".contrast .result").removeClass("res");
+
+            var key = $("#key").val(); //取key值
+
+            if (!key) {
+
+                oldKey0 = "";
+
+                return; //key为空则退出
+
+            }
+
+            if (oldKey0 != key || $(".current").length != currentLength) {
+
+                //重置
+
+                index0 = 0;
+
+                var index = 0;
+
+                $(".contrast .result").each(function () {
+
+                    $(this).replaceWith($(this).html());
+
+                });
+
+                pos0 = new Array();
+
+                if ($(".contrast-wrap").hasClass("current")) {
+
+                    currentLength = $(".current").length;
+
+                    $(".current .contrast").each(function () {
+
+                        $(this).html($(this).html().replace(new RegExp(key, "gm"), "<span id='result" + (index++) + "' class='result'>" + key + "</span>")); // 替换
+
+                    });
+
+                } else {
+
+                    $(".contrast-wrap").addClass('current');
+
+                    currentLength = $(".current").length;
+
+                    $(".contrast").each(function () {
+
+                        $(this).html($(this).html().replace(new RegExp(key, "gm"), "<span id='result" + (index++) + "' class='result'>" + key + "</span>")); // 替换
+
+                    });
+
+                }
+
+                //$("#key").val(key);
+
+                oldKey0 = key;
+
+
+
+                //$(".contrast .result").each(function () {
+
+                //    $(this).parents('.contrast-wrap').addClass('current');
+
+                //    pos0.push($(this).offset().top);
+
+                //});
+
+                // pos0.push($(".contrast .result:eq(2)").offset().top - $(".contrast .result:eq(2)").parents(".contrast").offset().top);
+
+                oldCount0 = $(".contrast .result").length;
+
+                newflag = 0;
+
+            }
+
+        }
+
+        function focusMove(index0) {
+
+            $(".contrast .result:eq(" + index0 + ")").parents('.contrast-wrap').addClass('current');
+
+            $(".contrast .result:eq(" + index0 + ")").addClass("res");
+
+            var top = $(".contrast .result:eq(" + index0 + ")").offset().top + $(".contrast .result:eq(" + index0 + ")").parents(".contrast").scrollTop();
+
+            var intop = top - $(".contrast .result:eq(" + index0 + ")").parents(".contrast").offset().top;
+
+            $(".contrast .result:eq(" + index0 + ")").parents(".contrast").animate({ scrollTop: intop }, 200);
+
+            if ($(".contrast .result:eq(" + index0 + ")").parents(".contrast").scrollTop() == 0) {
+
+                $("html, body").animate({ scrollTop: top - 200 }, 200);
+
+            } else {
+
+                $("html, body").animate({ scrollTop: $(".contrast .result:eq(" + index0 + ")").parents(".contrast").offset().top - 200 }, 200);
+
+            }
+
+
+
+        }
+
+
+
+
+
+        $('#key').change(function () {
+
+            if ($('#key').val() == "") {
+
+                index0 = 0;
+
+                $(".contrast .result").each(function () {
+
+                    $(this).replaceWith($(this).html());
+
+                });
+
+                oldKey0 = "";
+
+            }
+
+        });
+    </script>
+</body>
+
+</html>
