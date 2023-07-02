@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频推荐</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        overflow: visible;
+        transition: 0.3s;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        background-image: linear-gradient(125deg, #b3ffab, #12fff7);
+        background-size: 300%;
+        animation: bganimation 15s infinite;
+        background-attachment: fixed;
+        padding-top: 60px;
+    }
+
+    button {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: #d66fc0;
+        padding: 10px 15px;
+        border-radius: 15px;
+        border-color: rgb(255, 89, 233);
+        border-style: auto;
+        font-weight: 800;
+        font-size: auto;
+        backdrop-filter: blur(6px);
+    }
+
+    button:hover {
+        background-color: rgb(129, 211, 36);
+    }
+
+    button:active {
+        background-color: #F0F;
+    }
+
+    .box1 {
+        border: 5px blue dashed;
+        border-top: 5px rgba(51, 51, 51, 0.6) dashed;
+        border-right: 5px rgba(51, 51, 51, 0.6) dashed;
+        border-left: 5px rgba(51, 51, 51, 0.6) dashed;
+        border-bottom: 1px rgba(51, 51, 51, 0.6) dashed;
+        border-bottom-width: 8px;
+        border-bottom-style: dashed;
+        border-radius: 20px;
+        padding: 3%;
+        margin-top: 5px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: rgba(51, 51, 51, 1);
+        text-decoration: none;
+        font-size: 1.3em;
+        font-weight: 500;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .box1 h1 {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 800;
+        font-style: italic;
+        letter-spacing: 1em;
+        word-spacing: 0em;
+        text-align: center;
+        font-size: 1.9em;
+    }
+
+    .bg {
+        background-color: rgba(51, 51, 51, 0.7);
+    }
+
+    .shuipngxian {
+        color: #F00;
+        background-color: #F00;
+    }
+
+    .moweimenzi {
+        color: #FFF;
+    }
+
+    .daohanglantoubiao {
+        color: #FF0;
+    }
+
+    .daohanglanwenzi {
+        color: #0F0;
+    }
+
+    .ziyuanxiazai_toubiaowenzi {
+        color: #FF0;
+        font-size: 36px;
+    }
+
+    .ziyuanxiazai_neirongwenzi {
+        color: rgba(51, 51, 51, 1);
+        background-color: rgba(255, 255, 255, 1);
+        font-size: 1.3em;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 5%;
+    }
+
+    .daohanglan_01 {
+        position: fixed;
+        top: 1;
+        left: 1;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: auto;
+    }
+
+    .daohanglan_02 {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        margin-left: 0;
+        margin-right: 0;
+        top: 0px;
+        left: 0px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(6px);
+    }
+
+    .haodongxi {
+        font-size: 0.01em;
+        font-weight: 800;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 0px 0px 0px 0px;
+    }
+
+    a {
+        font-size: 1.4em;
+        font-weight: 800;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    a:hover {
+        color: #0F0;
+    }
+
+    a:active {
+        color: rgb(255, 66, 230);
+    }
+
+    #fixed_01 {
+        width: 100px;
+        height: 50px;
+        margin: 2px 0 0 20px;
+        font-weight: 800;
+        font-size: 1.2em;
+        padding: 0 25px 0 0;
+    }
+
+    #bgMusic {
+        position: absolute;
+        right: 10px;
+        bottom: 7px;
+        width: 360px;
+        height: 40px;
+        box-shadow: rgba(51, 51, 51, 0.7) 0px 0px 10px 0px;
+    }
+
+    #fixed_a_01 {
+        position: relative;
+        bottom: 40px;
+        left: 100px;
+        box-shadow: rgba(51, 51, 51, 0.7) 1px 1px 5px 0px;
+    }
+
+    #bgimg_01 {
+        width: 8vh;
+        height: 4vh;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-left: 10px;
+        box-shadow: rgba(51, 51, 51, 0.7) 0px 0px 3px 0px;
+    }
+
+    @keyframes bganimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+
+<body>
+    <a name="top01" id="top01"></a>
+    <table width="100%" border="0" align="center" cellspacing="0" class="bg">
+        <tr>
+            <td><img src="../../img/25.webp" width="100%" height="100%" />
+                <table width="100%" border="1">
+                    <tr align="center">
+                        <td width="20" height="23" class="daohanglantoubiao">
+                            <h2>视频推荐</h2>
+                        </td>
+                        <td width="20"><a href="./website-project-test.html">首页</a></td>
+                        <td width="20"><a href="./website-project-test-software.html">软件推荐</a></td>
+                        <td width="20"><a href="./website-project-test-about.html">网站介绍</a></td>
+                        <td width="20"><a href="./website-project-test-video.html">视频推荐</a></td>
+                        <td width="20"><a href="./login-xiaogong.html">用户登录</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="95%" border="0" align="center" cellspacing="0" class="bg">
+        <tr>
+            <td>
+                <table class="beijing" width="100%" border="1" align="center" cellspacing="20">
+                    <tr>
+                        <td><video src="../../video/2.mp4" controls preload="metadata" width="100%" height="100%"
+                                poster="../../img/26.webp"></video></td>
+                    </tr>
+                    <tr>
+                        <td><video src="../../video/3.mp4" controls preload="metadata" width="100%" height="100%"
+                                poster="../../img/27.webp"></video></td>
+                    </tr>
+                    <tr>
+                        <td><video src="../../video/4.mp4" controls preload="metadata" width="100%" height="100%"
+                                poster="../../img/28.webp"></video></td>
+                    </tr>
+                    <tr>
+                        <td><video src="../../video/5.mp4" controls preload="metadata" width="100%" height="100%"
+                                poster="../../img/29.webp"></video></td>
+                    </tr>
+                    <tr>
+                        <td><video src="../../video/6.mp4" controls preload="metadata" width="100%" height="100%"
+                                poster="../../img/30.webp"></video></td>
+                    </tr>
+                    <tr>
+                        <td><video src="../../video/7.mp4" controls preload="metadata" width="100%" height="100%"
+                                poster="../../img/31.webp"></video></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                <p class="moweimenzi" id="moweiwenzi">本网站用于测试，不服来打我，芜湖~
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <div class="daohanglan_01">
+        <button id="fixed_01" onclick="window.location.href='#top01'">至上</button>
+        <button id="fixed_01" onclick="window.location.href='#top02'">至下</button>
+        <button id="fixed_01" onclick="window.open('./website-project-test-scream.html','self')">惊喜</button>
+        <button id="fixed_01" onclick="window.location.href='./website-project-test-reward.html'">捐赠</button>
+    </div>
+
+    <div class="daohanglan_02">
+        <div><a href="./website-project-test.html"><img src="../../img/7.webp" id="bgimg_01" /></a></div>
+        <button id="fixed_a_01" onclick="window.location.href='./website-project-test.html'">前往首页</button>
+        <button id="fixed_a_01" onclick="window.location.href='./website-project-test-software.html'">软件推荐</button>
+        <button id="fixed_a_01" onclick="window.location.href='./website-project-test-about.html'">网站介绍</button>
+        <button id="fixed_a_01" onclick="window.location.href='./website-project-test-video.html'">视频推荐</button>
+        <button id="fixed_a_01" onclick="window.location.href='./login-xiaogong.html'">用户登录</button>
+        <audio src="../../audio/default.mp3" loop controls preload="metadata" id="bgMusic"></audio>
+    </div>
+
+    <a name="top02" id="top02"></a>
+
+    <script>
+        var audio = document.getElementById("bgMusic");
+        audio.volume = 0.2;
+    </script>
+</body>
+
+</html>

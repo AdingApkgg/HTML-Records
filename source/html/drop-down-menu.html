@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+</head>
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        transition: 1s;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #EAF0F7;
+        min-width: 220px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        transition: 1s;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        transition: 1s;
+    }
+</style>
+
+<body>
+    <h2>下拉菜单</h2>
+    <p>下拉菜单栏功能实现</p>
+
+    <div class="dropdown">
+        <span><b>将鼠标放到这里！</b></span>
+        <div class="dropdown-content">
+            <p><a href="https://www.bilibili.com/video/BV1GJ411x7h7/">学习资料</a></p>
+            <p><a href="https://www.bilibili.com/video/BV1GJ411x7h7/">三上悠亚</a></p>
+            <p><a href="https://www.bilibili.com/video/BV1GJ411x7h7/">苍井空</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

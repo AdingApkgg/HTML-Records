@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小站项目测试（电脑适配）</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        transition: 0.3s;
+    }
+
+    body {
+        height: 100vh;
+        background: url(https://api.aixiaowai.cn/api/api.php) no-repeat;
+        background-size: cover;
+        animation: bganimation 60s infinite;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box_a_01 {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 1);
+        border: 5px;
+        border-radius: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        border-color: rgba(50, 50, 50, 0.3);
+        width: 90%;
+        height: 90%;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(2px);
+        padding: 10px 10px;
+        box-shadow: rgba(51, 51, 51, 0.7) 5px 5px 10px 1px;
+    }
+
+    .toubiao {
+        position: relative;
+        color: rgb(47, 32, 255);
+        margin-left: 5px;
+        margin-right: 5px;
+        border-bottom: 5px solid rgba(51, 51, 51, 0.7);
+        border-bottom-style: dashed;
+        padding-bottom: 5px;
+        font-size: 1.7em;
+        font-weight: 900;
+    }
+
+    .bg_pv_01 {
+        position: relative;
+        width: 60vh;
+        height: auto;
+        margin: 60px 0px 0px 40px;
+        border: 5px;
+        border-radius: 15px;
+        border: 1vh solid rgba(255, 255, 255, 0.5);
+        border-color: rgba(253, 55, 220, 0.8);
+        box-shadow: rgba(51, 51, 51, 0.9) 5px 5px 5px 0px;
+    }
+
+    .bg_pv_01:hover {
+        cursor: none;
+        border-color: rgba(253, 55, 220, 0.7);
+        box-shadow: rgba(51, 51, 51, 0.7) 0px 0px 60px 10px;
+    }
+
+    .h3_a_01 {
+        position: relative;
+        margin: 2% 0 0 6%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2em;
+        font-weight: 800;
+        color: rgb(255, 89, 233)
+    }
+
+    .p_a_01 {
+        margin: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 2em;
+        font-weight: 800;
+        color: rgb(51, 51, 51);
+    }
+
+    .p_a_02 {
+        margin: 0.7% 0 0 6%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2em;
+        font-weight: 800;
+        color: rgb(51, 51, 51);
+    }
+
+    .jieshao_a_01 {
+        position: absolute;
+        overflow: auto;
+        top: 1;
+        left: 0;
+        bottom: 0;
+        right: 1;
+        width: 400px;
+        height: 260px;
+        margin: 0 0 20px 40px;
+    }
+
+    .button_a_01 {
+        width: 360px;
+        height: 260px;
+        margin: 2vh;
+        border: 5px dashed rgba(255, 255, 255, 0.7);
+        border-radius: 35px;
+        padding: 15px 0px 0px 20px;
+        background-color: rgba(51, 51, 51, 0.2);
+        backdrop-filter: blur(3px);
+        box-shadow: rgba(51, 51, 51, 0.7) 5px 5px 5px 0px;
+        position: absolute;
+        overflow: auto;
+        top: 1;
+        left: 1;
+        bottom: 0;
+        right: 0;
+    }
+
+    .box_a_01 .button_qiehuan {
+        position: absolute;
+        overflow: auto;
+        top: 0;
+        left: 1;
+        bottom: 1;
+        right: 0;
+        margin: 5px;
+        width: 80px;
+        height: 30px;
+        border-radius: 5px;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.7);
+        background-image: linear-gradient(125deg, #aec5ca, #798579, rgb(205, 231, 171));
+        background-size: 200%;
+        animation: bganimation 15s infinite;
+        box-shadow: rgba(255, 255, 255, 0.7) 2px 2px 5px 0px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-style: auto;
+        font-weight: 800;
+        font-size: 15px;
+    }
+
+    .box_a_01 .button_qiehuan:hover {
+        background-color: rgb(49, 104, 255);
+        box-shadow: rgba(51, 51, 51, 0.7) 0 0 100px 10px;
+        cursor: pointer;
+    }
+
+    .box_a_01 .button_qiehuan:active {
+        background-color: #F0F;
+        box-shadow: rgba(51, 51, 51, 0.3) 0 0 10000px 99px;
+    }
+
+    .audio_changzhu {
+        width: 300px;
+        height: 40px;
+        margin: 0 0 0 -300px;
+        transition: 0.3s;
+    }
+
+    .audio_changzhu_box {
+        position: fixed;
+        margin: 0 0 5px 0;
+        top: 1;
+        right: 1;
+        bottom: 0;
+        left: 0;
+        float: left;
+        display: flex;
+    }
+
+    .audio_changzhu_box_a {
+        background: rgba(255, 255, 255, 0.8);
+        width: 40px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        margin: 0 -40px 0 0;
+        border-radius: 6px;
+    }
+
+    .audio_changzhu_box_a:hover {
+        transform: rotate3d(0, 1000, 0, 180deg);
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .audio_changzhu_box:hover .audio_changzhu {
+        transition: 0.5s;
+        margin: 0 0 0 0px;
+    }
+
+    #biaoti_a_01 {
+        border-left: 7px solid rgb(241, 61, 151);
+        padding-left: 10px;
+        position: relative;
+        margin: 60px 0px 0px 20px;
+        color: rgb(51, 51, 51);
+    }
+
+    #button_b_01 {
+        background-color: rgba(255, 255, 255, 0.7);
+        background-image: linear-gradient(125deg, #40cdf0, #36fc36, rgb(169, 255, 56));
+        background-size: 400%;
+        animation: bganimation 15s infinite;
+        color: rgb(255, 89, 233);
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 0px solid rgba(255, 255, 255, 0.1);
+        border-style: auto;
+        font-weight: 800;
+        font-size: 1.8em;
+        margin: 10px 5px;
+        position: relative;
+        box-shadow: rgba(51, 51, 51, 0.7) 5px 5px 5px 0px;
+    }
+
+    #button_b_02 {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: rgb(255, 89, 233);
+        padding: 10px 100px;
+        border-radius: 5px;
+        border: 0px solid rgba(255, 255, 255, 0.1);
+        font-weight: 800;
+        font-size: 1.8em;
+        margin: 10px;
+        box-shadow: rgba(51, 51, 51, 0.7) 5px 5px 5px 0px;
+        background-image: linear-gradient(125deg, #3dffb5, #36fc36, rgb(30, 189, 252));
+        background-size: 200%;
+        animation: bganimation 15s infinite;
+    }
+
+    #button_b_01:hover {
+        background-color: rgb(49, 104, 255);
+        box-shadow: rgba(51, 51, 51, 0.7) 0 0 100px 10px;
+        cursor: pointer;
+    }
+
+    #button_b_01:active {
+        background-color: #F0F;
+        box-shadow: rgba(51, 51, 51, 0.3) 0 0 10000px 99px;
+    }
+
+    #button_b_02:hover {
+        background-color: rgb(129, 211, 36);
+        cursor: pointer;
+        box-shadow: rgba(51, 51, 51, 0.7) 0 0 100px 10px;
+        resize: both;
+        overflow: auto;
+    }
+
+    #button_b_02:active {
+        background-color: rgb(255, 251, 21);
+        color: rgb(46, 255, 74);
+        border: 2px solid rgb(51, 51, 51);
+        box-shadow: rgba(255, 241, 43, 0.3) 0 0 1000px 99px;
+    }
+
+    @keyframes bganimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @media(min-width:700px) {
+        .audio_changzhu {
+            margin: 3px;
+            top: 1;
+            right: 1;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 40px;
+        }
+    }
+</style>
+
+<body>
+    <div class="box_a_01">
+        <div id="biaoti_a_01">
+            <div class="p_a_01">欢迎来到<dada class="toubiao">Ading阿定</dada>的个人网站。。。</div>
+        </div>
+
+        <button class="button_qiehuan" onclick="window.location.href='./website-project-test-mobile.html'">竖屏版</button>
+
+        <video src="../../video/1.mp4" class="bg_pv_01" preload="metadata" poster="../../img/12.webp" autoplay></video>
+
+        <div class="jieshao_a_01">
+            <h3 class="h3_a_01">特别说明：</h3>
+            <p class="p_a_02">1. 本网站建立的初衷是为了测试，</p>
+            <p class="p_a_02">2. 如果侵犯了您的利益，请联系删除。</p>
+            <p class="p_a_02">3. 原神私服交流QQ群：1169040657</p>
+            <h3 class="h3_a_01">联系方式：</h3>
+            <p class="p_a_02">VX：AdingApkgg &nbsp;QQ：1679456234</p>
+            <p class="p_a_02">邮箱：AdingApkgg@outlook.com</p>
+        </div>
+
+        <div class="button_a_01">
+            <button id="button_b_01" onclick="window.location.href='./website-project-test.html'">前往首页</button>
+            <button id="button_b_01" onclick="window.location.href='./website-project-test-software.html'">软件推荐</button>
+            <button id="button_b_01" onclick="window.location.href='./website-project-test-about.html'">网站介绍</button>
+            <button id="button_b_01" onclick="window.location.href='./website-project-test-video.html'">视频推荐</button>
+            <button id="button_b_02" onclick="window.location.href='./login-xiaogong.html'">用户登录</button>
+        </div>
+
+    </div>
+
+    <div class="audio_changzhu_box">
+        <div class="audio_changzhu_box_a">&#8594</div>
+        <audio class="audio_changzhu" id="bgMusic" src="../../audio/default.mp3" controls autoplay loop
+            preload="metadata"></audio>
+    </div>
+
+    <script>
+        var audio = document.getElementById("bgMusic");
+        audio.volume = 0.2;
+    </script>
+</body>
+
+</html>
