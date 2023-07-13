@@ -9,6 +9,11 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
     /* 鸿蒙字体引入 */
     @font-face {
         font-family: 'HarmonyOS_Regular';
@@ -532,41 +537,110 @@
         unicode-range: U+21-7e, U+a4, U+a7-a8, U+b0-b1, U+b7;
     }
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     body {
         font-family: HarmonyOS_Regular !important;
+        height: 100vh;
+        background: url(https://api.aixiaowai.cn/api/api.php) no-repeat;
+        background-size: cover;
+    }
+
+    .box {
+        width: 30%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+        background: linear-gradient(125deg, rgba(50, 50, 50, 0.2), rgba(255, 255, 255, 0.2));
+        background-size: 200%;
+        background-attachment: fixed;
+        animation: bganimation 5s infinite;
+        color: rgb(255, 255, 255, 0.9);
+        border-top: 20px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+    }
+
+    .title,
+    .description,
+    ul,
+    .by {
+        margin: 15px;
+    }
+
+    .avatar {
+        position: absolute;
+        width: 15%;
+        top: 1;
+        left: 1;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        border-radius: 100%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .box {
+            width: 95%;
+        }
+    }
+
+    @keyframes bganimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
     }
 </style>
 
 <!-- 主体 -->
 
 <body>
-    <h1>HTML记录</h1>
-    <p>这里记录了一些我的HTML练习与收集的项目..</p>
-    <ul>
-        <li><a href="./source/html/css-test_01.html">CSS测试-01</a></li>
-        <li><a href="./source/html/card-announcement.html">卡片公告栏</a></li>
-        <li><a href="./source/html/search.html">搜索功能实现</a></li>
-        <li><a href="./source/html/pseudo-classes.html">伪类</a></li>
-        <li><a href="./source/html/gradients-shadow.html">渐变与阴影</a></li>
-        <li><a href="./source/html/accordion.html">带标题描述的圆角图片手风琴</a></li>
-        <li><a href="./source/html/touch-conversion.html">触摸转换过渡效果</a></li>
-        <li><a href="./source/html/navigation-bar.html">导航栏</a></li>
-        <li><a href="./source/html/dark-or-light.html">昼夜切换</a></li>
-        <li><a href="./source/html/jockbutt-or-love.html">屁股舞与爱</a></li>
-        <li><a href="./source/html/login.html">登录界面</a></li>
-        <li><a href="./source/html/login-xiaogong.html">宵宫登录界面</a></li>
-        <li><a href="./source/html/position.html">定位</a></li>
-        <li><a href="./source/html/default-volume.html">默认音量</a></li>
-        <li><a href="./source/html/drop-down-menu.html">下拉菜单</a></li>
-        <li><a href="./source/html/website-project-test.html">小站项目测试（电脑适配）</a></li>
-        <li><a href="./source/html/website-project-test-mobile.html">小站项目测试（移动适配）</a></li>
-        <li><a href="./source/html/404-not-found.html">404界面仿制</a></li>
-        <li><a href="./source/html/scream.html">叫声</a></li>
-        <li><a href="./source/html/">#</a></li>
-        <li><a href="./source/html/">#</a></li>
-        <li><a href="./source/html/">#</a></li>
-    </ul>
-    <p>By：<a href="//saop.cc">Ading阿定</a></p>
+    <div class="box">
+        <h1 class="title">HTML记录</h1>
+        <p class="description">这里记录了一些我的HTML练习与收集的项目..</p>
+        <ul>
+            <li><a href="./source/html/css-test_01.html">CSS测试-01</a></li>
+            <li><a href="./source/html/card-announcement.html">卡片公告栏</a></li>
+            <li><a href="./source/html/search.html">搜索功能实现</a></li>
+            <li><a href="./source/html/pseudo-classes.html">伪类</a></li>
+            <li><a href="./source/html/gradients-shadow.html">渐变与阴影</a></li>
+            <li><a href="./source/html/accordion.html">带标题描述的圆角图片手风琴</a></li>
+            <li><a href="./source/html/touch-conversion.html">触摸转换过渡效果</a></li>
+            <li><a href="./source/html/navigation-bar.html">导航栏</a></li>
+            <li><a href="./source/html/dark-or-light.html">昼夜切换</a></li>
+            <li><a href="./source/html/jockbutt-or-love.html">屁股舞与爱</a></li>
+            <li><a href="./source/html/login.html">登录界面</a></li>
+            <li><a href="./source/html/login-xiaogong.html">宵宫登录界面</a></li>
+            <li><a href="./source/html/position.html">定位</a></li>
+            <li><a href="./source/html/default-volume.html">默认音量</a></li>
+            <li><a href="./source/html/drop-down-menu.html">下拉菜单</a></li>
+            <li><a href="./source/html/website-project-test.html">小站项目测试（电脑适配）</a></li>
+            <li><a href="./source/html/website-project-test-mobile.html">小站项目测试（移动适配）</a></li>
+            <li><a href="./source/html/404-not-found.html">404界面仿制</a></li>
+            <li><a href="./source/html/scream.html">叫声</a></li>
+            <li><a href="./source/html/number-guessing-game.html">猜数字游戏</a></li>
+            <li><a href="./source/html/">#</a></li>
+            <li><a href="./source/html/">#</a></li>
+            <li><a href="./source/html/">#</a></li>
+        </ul>
+        <p class="by">By：<a href="//saop.cc">Ading阿定</a></p>
+        <img src="./img/32.webp" alt="头像" class="avatar">
+    </div>
 </body>
 
 </html>
