@@ -544,7 +544,7 @@
     body {
         font-family: HarmonyOS_Regular !important;
         height: 100vh;
-        background: url(https://www.loliapi.com/acg/) no-repeat;
+        background: url(https://api.aixiaowai.cn/api/api.php) no-repeat;
         background-size: cover;
     }
 
@@ -587,6 +587,13 @@
     }
 
     @media screen and (max-width: 1200px) {
+        body {
+            background: linear-gradient(125deg, #5433ff, #20bdff, #a5fecb);
+            background-size: 300%;
+            animation: bganimation 15s infinite;
+            background-attachment: fixed;
+        }
+
         .box {
             width: 95%;
         }
