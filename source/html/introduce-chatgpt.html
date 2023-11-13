@@ -92,8 +92,8 @@
         float: left;
         padding: 5px;
         display: flex;
-  justify-content: center;
-  align-items: center;
+        justify-content: center;
+        align-items: center;
     }
 
     #sectionLeft01 .sectionLeft01text {
@@ -105,7 +105,7 @@
         line-height: 100px;
     }
 
-    main section #sectionLeft01 p{
+    main section #sectionLeft01 p {
         font-size: 1.2em;
         color: rgba(0, 0, 0, .5);
         line-height: 24px;
@@ -127,6 +127,36 @@
         border-radius: 16px;
         border: rgba(180, 255, 255, .3) solid 5px;
         box-shadow: rgba(0, 0, 0, .3) 0 3px 3px 0;
+    }
+
+    #sectionIcon{
+        width: 100%;
+        height: 20vh;
+        margin: 0 auto;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        line-height: 20vh;
+        font-size: 3em;
+    }
+
+    .sectionIcon01 {
+        width: 20%;
+        background: #00ff00;
+        color: #ff0000;
+    }
+
+    .sectionIcon02 {
+        width: 20%;
+        background: #0000ff;
+        color: #00ff00;
+    }
+
+    .sectionIcon03 {
+        width: 20%;
+        background: #ff0000;
+        color: #0000ff;
     }
 
     #footer {
@@ -175,10 +205,15 @@
                     alt="ChatGPT">
             </div>
         </section>
-        <section>
-            <div class="sectionIcon">
+        <section id="sectionIcon">
+            <div class="sectionIcon01">
                 <i class="fa-solid fa-droplet fa-bounce"></i>
             </div>
+            <div class="sectionIcon02">
+                <i class="fa-solid fa-droplet fa-bounce"></i>
+            </div>
+            <div class="sectionIcon03">
+                <i class="fa-solid fa-droplet fa-bounce"></i>
             </div>
         </section>
     </main>
