@@ -200,6 +200,7 @@
         muyvNumSpan.innerText = 0;
         function muyvAudioFunction() {
             var muyvAudioVar = new Audio(muyvAudio.src);
+            muyvAudioVar.load();
             muyvAudioVar.play();
             muyvNumSpan.innerText++;
             gongDePlus.classList.add("gongDePlusHide");
