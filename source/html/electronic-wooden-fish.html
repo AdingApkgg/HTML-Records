@@ -108,6 +108,7 @@
             <p id="gongDePlus">功德+1</p>
             <button type="button" id="btnChangeAudio" onclick="changeAudio()">消耗20功德切换音效</button>
             <button type="button" id="btnChangeAudio" onclick="GautamaLaugh()">消耗60功德召唤佛祖陪你笑</button>
+            <button type="button" id="btnChangeAudio" onclick="autoClick()">自动积功德（再次点击关闭）</button>
         </section>
     </main>
     <footer id="footerTag">
@@ -159,6 +160,19 @@
             GautamaLaughAudioVar.play();
             muyvNumSpan.innerText -= 60;
         }
+        var autoTimerClick;
+        var autoTimerClickTemp = false;
+        function autoClick(){
+            if(autoTimerClickTemp == false){
+                autoTimerClick = setInterval(function(){
+                    muyvAudioFunction();
+                },1000);
+                autoTimerClickTemp = true;
+            }else if(autoTimerClickTemp == true){
+                clearInterval(autoTimerClick);
+                autoTimerClickTemp = false;
+            }
+        };
         muyvImg.addEventListener("click", muyvAudioFunction);
         document.addEventListener("keydown", function (event) {
             if (event.code === "Enter" || event.code === "Space" || event.code === "NumpadEnter") {
