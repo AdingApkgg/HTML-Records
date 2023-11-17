@@ -79,6 +79,22 @@
         text-align: center;
     }
 
+    .giscus {
+        width: 100%;
+        height: auto;
+        display: inline-flex;
+    }
+
+    .giscus-frame {
+        background: rgb(255, 255, 255);
+        width: 70%;
+        margin: 15px auto;
+        border: rgb(90, 90, 90) 3px solid;
+        border-radius: 6px;
+        padding: 15px;
+        box-shadow: rgba(51, 51, 51, 0.3) 0 0 20px 5px;
+    }
+
     @keyframes textPopUp {
         from {
             top: 100px;
@@ -113,6 +129,11 @@
     </main>
     <footer id="footerTag">
         <div id="footer-wrap">
+            <script src="https://giscus.app/client.js" data-repo="AdingApkgg/giscus" data-repo-id="R_kgDOKBUdzQ"
+                data-category="Announcements" data-category-id="DIC_kwDOKBUdzc4CYOU9" data-mapping="url" data-strict="0"
+                data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top"
+                data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async>
+                </script>
             <div class="copyright"><span><b>©2023</b></span><span><b>&nbsp;By <a href="//saop.cc">Ading阿定</a></b></span>
             </div>
             <span id="busuanzi_container_page_pv">
@@ -153,6 +174,8 @@
                 muyvAudioSrcTemp = 0;
                 alert("已切换至清脆音效");
             };
+            var muyvAudioVar = new Audio(muyvAudio.src);
+            muyvAudioVar.play();
             muyvNumSpan.innerText -= 20;
         };
         function GautamaLaugh() {
@@ -162,15 +185,17 @@
         }
         var autoTimerClick;
         var autoTimerClickTemp = false;
-        function autoClick(){
-            if(autoTimerClickTemp == false){
-                autoTimerClick = setInterval(function(){
+        function autoClick() {
+            if (autoTimerClickTemp == false) {
+                autoTimerClick = setInterval(function () {
                     muyvAudioFunction();
-                },1000);
+                }, 1500);
                 autoTimerClickTemp = true;
-            }else if(autoTimerClickTemp == true){
+                alert("已启用自动敲击");
+            } else if (autoTimerClickTemp == true) {
                 clearInterval(autoTimerClick);
                 autoTimerClickTemp = false;
+                alert("已禁用自动敲击");
             }
         };
         muyvImg.addEventListener("click", muyvAudioFunction);
