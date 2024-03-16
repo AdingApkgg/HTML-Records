@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>昼夜模式</title>
+</head>
+<style>
+    body[data-theme=light] {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    body[data-theme=dark] {
+        background: #000000;
+        color: #ffffff;
+    }
+</style>
+
+<body data-theme="light">
+    <h2>昼夜模式测试</h2>
+    <p>点击按钮切换模式</p>
+    <button type="button" onclick="lightOrDarkModel()">切换</button>
+    <script>
+        function lightOrDarkModel() {
+            if (document.body.getAttribute("data-theme") == 'light') {
+                document.body.removeAttribute('data-theme', 'light');
+                document.body.setAttribute('data-theme', 'dark');
+            }
+            else if (document.body.getAttribute("data-theme") == 'dark') {
+                document.body.removeAttribute('data-theme', 'dark');
+                document.body.setAttribute('data-theme', 'light');
+            }
+        }
+    </script>
+</body>
+
+</html>

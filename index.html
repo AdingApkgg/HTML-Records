@@ -12,6 +12,8 @@
     * {
         margin: 0;
         padding: 0;
+        scroll-behavior: smooth;
+        transition: all .3s ease-in-out;
     }
 
     /* 鸿蒙字体引入 */
@@ -548,6 +550,18 @@
         background-size: cover;
     }
 
+    a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        text-shadow: rgba(50, 50, 50, 0.2) 0 3px 2px;
+    }
+
+    a:hover {
+        color: rgba(250, 250, 250, 1);
+        text-decoration: underline;
+        text-shadow: rgba(50, 50, 50, 0.2) 0 2px 1px;
+    }
+
     .box {
         width: 30%;
         max-width: 800px;
@@ -565,6 +579,12 @@
         backdrop-filter: blur(10px);
         border-bottom-left-radius: 18px;
         border-bottom-right-radius: 18px;
+        overflow: auto;
+        max-height: 86vh;
+    }
+
+    .box:hover {
+        background: rgba(51, 51, 51, 0.6);
     }
 
     .title,
@@ -574,14 +594,20 @@
         margin: 15px;
     }
 
+    .box ul li {
+        margin: 5px 0;
+        font-size: 1.2rem;
+    }
+
+    .box ul li:hover {
+        font-size: 1.6rem;
+    }
+
     .avatar {
         position: absolute;
         width: 15%;
-        top: 1;
-        left: 1;
-        bottom: 0;
-        right: 0;
-        margin: 10px;
+        top: 10px;
+        right: 10px;
         border: 3px solid rgba(255, 255, 255, 0.5);
         border-radius: 100%;
     }
@@ -638,16 +664,18 @@
             <li><a href="./source/html/drop-down-menu.html">下拉菜单</a></li>
             <li><a href="./source/html/website-project-test.html">小站项目测试（电脑适配）</a></li>
             <li><a href="./source/html/website-project-test-mobile.html">小站项目测试（移动适配）</a></li>
+            <li><a href="https://ysbbs.saop.cc/">原神群推荐</a></li>
             <li><a href="./source/html/404-not-found.html">404界面仿制</a></li>
             <li><a href="./source/html/scream.html">叫声</a></li>
             <li><a href="./source/html/number-guessing-game.html">猜数字游戏</a></li>
-            <li><a href="./source/html/introduce-chatgpt.html">ChatGPT介绍页</a></li>
+            <li><a href="./project/gpt-about/index.html">ChatGPT介绍页</a></li>
             <li><a href="./source/html/receive-yuanshi.html">原石诈骗</a></li>
+            <li><a href="https://muyv.saop.cc/">电子木鱼</a></li>
             <li><a href="./source/html/">#</a></li>
             <li><a href="./source/html/">#</a></li>
             <li><a href="./source/html/">#</a></li>
         </ul>
-        <p class="by">By：<a href="//saop.cc">Ading阿定</a></p>
+        <p class="by">By：<a href="https://saop.cc">Asuna</a></p>
         <img src="./img/32.webp" alt="头像" class="avatar">
     </div>
 </body>
