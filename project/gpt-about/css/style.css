@@ -920,10 +920,25 @@ main section #sectionRight01 .lbtContainer * {
     border-radius: 80px 20px;
     box-shadow: rgba(0, 0, 0, .3) 0 4px 6px 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #ChatVideo:hover {
     box-shadow: rgba(0, 0, 0, .3) 0 6px 20px 1px;
+}
+
+#ChatVideo i {
+    position: absolute;
+    font-size: 4rem;
+    text-shadow: rgba(51, 51, 51, .4) 0 4px 3px;
+    z-index: 1;
+}
+
+#ChatVideo img {
+    width: 100%;
+    filter: brightness(70%);
 }
 
 #sectionEnd {
